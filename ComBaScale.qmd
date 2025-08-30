@@ -15,7 +15,27 @@ editor: visual
 
 # ComBaScale stepped-wedge cluster randomized trial (SW-CRT)
 
-Plot data exported from <https://clusterrcts.shinyapps.io/rshinyapp/>
+Our sample size was determined based on the primary outcome assessed at the interim timepoint (month 16 of the trial), prior to switching the final sequence of clusters to the intervention. With two sequences of six clusters each, we achieve 80% power at a 5% significance level to detect a 12% higher engagement in care (across both hypertension and diabetes taken together) at 6 months in the intervention compared to the control.
+
+Based on [our recent research](https://pmc.ncbi.nlm.nih.gov/articles/PMC12306284/) in the same study area, we anticipate a hypertension prevalence of 17% and a type 2 diabetes prevalence of 4%, with 75% of individuals with hypertension and 67% with diabetes already engaged in care. In the predecessor [ComBaCaL trial](https://www.researchsquare.com/article/rs-7022331/v1), we observed a 12% higher engagement in care for hypertension and a 34% higher engagement in care for diabetes in the intervention clusters compared to controls at 6 months follow-up. The intracluster correlation coefficient (ICC) for engagement in care ranged from 0.06 to 0.14. Each cluster encompasses 30–40 villages, each with 2700-3600 adult residents, resulting in an estimated 400-600 individuals with hypertension and/or diabetes per cluster.
+
+Sample size calculations followed [the recommendation](https://pubmed.ncbi.nlm.nih.gov/27350420/) for a SW-CRT with repeated cross-sectional data collection, using these assumptions drawn from a similar intervention in the same setting:
+
+-   Baseline engagement in care (across hypertension and diabetes): 75%
+
+-   Expected increase in engagement in care at 6 months: 12%
+
+-   ICC range: 0.06–0.14
+
+-   Mean cluster size: 400 participants
+
+-   Discrete-time decay of the correlation structure, allowing within-cluster correlation to decrease over successive measurement periods (allowing for a more realistic scenario)
+
+-   Two sequences and three periods (including baseline period)
+
+Under these assumptions, 80% power is achieved with two sequences of at least six clusters each. Notably, the assumptions for ICC and mean cluster size are conservative, suggesting that actual power may exceed this estimate. Furthermore, since these calculations are based on the interim analysis after two sequences, including a third sequence would further increase statistical power.
+
+Plot data exported from: <https://clusterrcts.shinyapps.io/rshinyapp/>
 
 **Packages**
 
@@ -92,5 +112,7 @@ ggplot(df_long, aes(x = no_clusters_x, y = power, color = scenario)) +
   )
 
 ```
+
+*Footnote: base ICC (0.10), lower ICC (0.06), upper ICC (0.14)*
 
 # 
